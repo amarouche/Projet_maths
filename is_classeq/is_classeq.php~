@@ -1,0 +1,23 @@
+<?php
+require "../my_congru/my_congru.php";
+
+function  is_classeq($tab, $x, $n){
+if(!is_array($tab) || !is_int($x) || !is_int($n) || $n == 0) {
+        echo "va t'acheter des doigts !\n";
+        return (-1);
+    }
+    foreach ($tab as &$value)
+    {
+        if(!is_int($value)) {
+            echo "va t'acheter des doigts !\n";
+            return (-1);
+        }
+        $result = my_congru($value, $x, $n);
+        if ($result == 0)
+            {
+             return (0);
+            }
+    }
+    return(1);
+}
+?>
